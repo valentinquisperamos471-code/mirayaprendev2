@@ -148,8 +148,6 @@ y disfruta de una increíble experiencia de cine.
 
 <!--==========================
 CARTELERA
-<!--==========================
-CARTELERA
 ===========================-->
 
 <section id="cartelera">
@@ -319,7 +317,282 @@ CARTELERA
 </div>
 
 </section>
+===========================--><!--==========================
+HORARIOS
 ===========================-->
+
+<section id="horarios">
+
+<h2 class="tituloSeccion">🕒 Horarios</h2>
+
+<div class="contenedorHorarios">
+
+<div class="horarioCard">
+
+<h3>📅 Lunes a Viernes</h3>
+
+<p>3:00 PM</p>
+<p>5:00 PM</p>
+<p>7:00 PM</p>
+<p>9:00 PM</p>
+
+</div>
+
+<div class="horarioCard">
+
+<h3>📅 Sábados</h3>
+
+<p>10:00 AM</p>
+<p>12:00 PM</p>
+<p>2:00 PM</p>
+<p>4:00 PM</p>
+<p>6:00 PM</p>
+<p>8:00 PM</p>
+<p>10:00 PM</p>
+
+</div>
+
+<div class="horarioCard cerrado">
+
+<h3>🚫 Domingos y Feriados</h3>
+
+<p>Cerrado</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==========================
+RESERVA
+===========================-->
+
+<section id="reserva">
+
+<h2 class="tituloSeccion">🎟 Reserva tu Entrada</h2>
+
+<div class="formReserva">
+
+<div class="campo">
+
+<label>👤 Nombre Completo</label>
+
+<input
+type="text"
+id="nombre"
+placeholder="Escribe tu nombre">
+
+</div>
+
+<div class="campo">
+
+<label>🎓 Grado / Público</label>
+
+<select id="grado">
+
+<option value="">Selecciona</option>
+
+<option>Inicial</option>
+
+<option>1° Primaria</option>
+<option>2° Primaria</option>
+<option>3° Primaria</option>
+<option>4° Primaria</option>
+<option>5° Primaria</option>
+<option>6° Primaria</option>
+
+<option>1° Secundaria</option>
+<option>2° Secundaria</option>
+<option>3° Secundaria</option>
+<option>4° Secundaria</option>
+<option>5° Secundaria</option>
+
+<option>Comunidad SJL</option>
+
+</select>
+
+</div>
+
+<div class="campo">
+
+<label>🎬 Película</label>
+
+<select id="pelicula">
+
+<option>Toy Story 5</option>
+
+<option>Minions & Monsters</option>
+
+<option>The Amazing Digital Circus</option>
+
+<option>Obsesión</option>
+
+<option>La Odisea</option>
+
+</select>
+
+</div>
+
+<div class="campo">
+
+<label>🕒 Horario</label>
+
+<select id="hora">
+
+<option>3:00 PM</option>
+<option>5:00 PM</option>
+<option>7:00 PM</option>
+<option>9:00 PM</option>
+
+</select>
+
+</div>
+
+<a href="#asientos" class="btnPrincipal">
+
+Continuar →<!--==========================
+ASIENTOS
+===========================-->
+
+<section id="asientos">
+
+<h2 class="tituloSeccion">💺 Selecciona tu Asiento</h2>
+
+<div class="pantalla">
+🎥 PANTALLA
+</div>
+
+<div class="leyenda">
+
+<div><span class="libre"></span> Libre</div>
+
+<div><span class="seleccionadoLeyenda"></span> Seleccionado</div>
+
+<div><span class="ocupado"></span> Ocupado</div>
+
+</div>
+
+<div class="cine">
+
+<div class="fila">
+<div class="asiento">A1</div>
+<div class="asiento">A2</div>
+<div class="asiento">A3</div>
+<div class="asiento">A4</div>
+<div class="asiento">A5</div>
+</div>
+
+<div class="fila">
+<div class="asiento">B1</div>
+<div class="asiento">B2</div>
+<div class="asiento ocupado">B3</div>
+<div class="asiento">B4</div>
+<div class="asiento">B5</div>
+</div>
+
+<div class="fila">
+<div class="asiento">C1</div>
+<div class="asiento">C2</div>
+<div class="asiento">C3</div>
+<div class="asiento">C4</div>
+<div class="asiento">C5</div>
+</div>
+
+<div class="fila">
+<div class="asiento">D1</div>
+<div class="asiento">D2</div>
+<div class="asiento">D3</div>
+<div class="asiento ocupado">D4</div>
+<div class="asiento">D5</div>
+</div>
+
+</div>
+
+<h3 id="asientoSeleccionado">
+💺 Ningún asiento seleccionado
+</h3>
+
+<button id="confirmarAsiento" class="btnPrincipal">
+Confirmar Asiento
+</button>
+
+</section>
+<!--==========================
+COMBOS
+===========================-->
+
+<section id="combos">
+
+<h2 class="tituloSeccion">🍿 Combos</h2>
+
+<div class="contenedorCombos">
+
+<div class="combo">
+
+<img src="img/canchita.png" alt="Canchita">
+
+<h3>Combo Escolar</h3>
+
+<p>Canchita + Gaseosa</p>
+
+<h4>S/ 8</h4>
+
+<button onclick="agregarCombo('Combo Escolar',8)">
+Agregar
+</button>
+
+</div>
+
+<div class="combo">
+
+<img src="img/hotdog.png" alt="Hot Dog">
+
+<h3>Combo Hot Dog</h3>
+
+<p>Hot Dog + Gaseosa</p>
+
+<h4>S/ 12</h4>
+
+<button onclick="agregarCombo('Combo Hot Dog',12)">
+Agregar
+</button>
+
+</div>
+
+<div class="combo">
+
+<img src="img/nachos.png" alt="Nachos">
+
+<h3>Combo Nachos</h3>
+
+<p>Nachos + Gaseosa</p>
+
+<h4>S/ 10</h4>
+
+<button onclick="agregarCombo('Combo Nachos',10)">
+Agregar
+</button>
+
+</div>
+
+</div>
+
+<h3>🛒 Carrito</h3>
+
+<ul id="listaCarrito"></ul>
+
+<h3 id="total">
+Total: S/ 0
+</h3>
+
+</section>
+    
+</a>
+
+</div>
+
+</section>
 
 <script type="module" src="firebase.js"></script>
 
@@ -327,4 +600,93 @@ CARTELERA
 
 </body>
 
+</html>
+<!--==========================
+TICKET
+===========================-->
+
+<section id="ticket">
+
+<h2 class="tituloSeccion">🎟 Tu Ticket</h2>
+
+<div id="ticketFinal">
+
+<p>Aquí aparecerá tu ticket cuando completes la reserva.</p>
+
+</div>
+
+<button id="generarTicket" class="btnPrincipal">
+🎟 Generar Ticket
+</button>
+
+</section>
+
+<!--==========================
+RANKING
+===========================-->
+
+<section id="ranking">
+
+<h2 class="tituloSeccion">🏆 Ranking Ecológico</h2>
+
+<div class="rankingCards">
+
+<div class="rankingCard">
+🥇
+<h3>Inicial</h3>
+<p>0 Botellas</p>
+</div>
+
+<div class="rankingCard">
+🥈
+<h3>Primaria</h3>
+<p>0 Botellas</p>
+</div>
+
+<div class="rankingCard">
+🥉
+<h3>Secundaria</h3>
+<p>0 Botellas</p>
+</div>
+
+<div class="rankingCard">
+🌎
+<h3>Comunidad SJL</h3>
+<p>0 Botellas</p>
+</div>
+
+</div>
+
+</section>
+
+<!--==========================
+CONTACTO
+===========================-->
+
+<section id="contacto">
+
+<h2 class="tituloSeccion">📞 Contáctanos</h2>
+
+<p>📍 San Juan de Lurigancho - Lima, Perú</p>
+
+<p>📱 WhatsApp: 955 057 190</p>
+
+<p>📧 Email: mirayaprende@gmail.com</p>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Mira y Aprende | Cine Reciclable Escolar
+
+</p>
+
+</footer>
+
+<script type="module" src="firebase.js"></script>
+<script src="app.js"></script>
+
+</body>
 </html>
