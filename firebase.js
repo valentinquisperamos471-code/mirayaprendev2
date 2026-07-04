@@ -21,3 +21,21 @@ const nuevoTicket = push(ref(db, "tickets"));
 set(nuevoTicket, ticket);
 
 }
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAc6J2XPUQhYqkn24ByKelTE6A4pZyWuOg",
+  authDomain: "mira-y-aprendev2.firebaseapp.com",
+  databaseURL: "https://mira-y-aprendev2-default-rtdb.firebaseio.com",
+  projectId: "mira-y-aprendev2",
+  storageBucket: "mira-y-aprendev2.firebasestorage.app",
+  messagingSenderId: "339955052391",
+  appId: "1:339955052391:web:825746f55757bbf02149c2"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
