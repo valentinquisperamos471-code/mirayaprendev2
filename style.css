@@ -371,3 +371,148 @@ color:#18d26e;
 text-shadow:0 0 20px rgba(24,210,110,.5);
 
 }
+#cartelera{
+padding:80px 8%;
+}
+
+.peliculas{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.pelicula{
+background:#141414;
+border-radius:15px;
+overflow:hidden;
+transition:.3s;
+box-shadow:0 10px 30px rgba(0,0,0,.5);
+cursor:pointer;
+}
+
+.pelicula:hover{
+transform:scale(1.05);
+box-shadow:0 15px 40px rgba(24,210,110,.4);
+}
+
+.pelicula img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.infoPelicula{
+padding:15px;
+}
+
+.infoPelicula h3{
+color:#18d26e;
+margin-bottom:5px;
+}
+
+.infoPelicula p{
+color:#ccc;
+font-size:14px;
+margin:5px 0;
+}
+
+/* BOTONES */
+
+.botonesPelicula{
+display:flex;
+justify-content:space-between;
+margin-top:10px;
+gap:10px;
+}
+
+.btnTrailer{
+flex:1;
+text-align:center;
+background:#333;
+color:white;
+padding:8px;
+border-radius:8px;
+text-decoration:none;
+transition:.3s;
+}
+
+.btnTrailer:hover{
+background:#18d26e;
+}
+
+.btnReservar{
+flex:1;
+text-align:center;
+background:#18d26e;
+color:white;
+padding:8px;
+border-radius:8px;
+text-decoration:none;
+transition:.3s;
+}
+
+.btnReservar:hover{
+background:#0fb95d;
+}
+
+/* HORARIOS */
+
+#horarios{
+padding:80px 8%;
+}
+
+.contenedorHorarios{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.horarioCard{
+background:#141414;
+padding:20px;
+border-radius:15px;
+text-align:center;
+}
+
+.horarioCard h3{
+color:#18d26e;
+margin-bottom:10px;
+}
+
+.horarioCard.cerrado{
+border:2px solid red;
+}
+
+/* RESERVA */
+
+#reserva{
+padding:80px 8%;
+}
+
+.formReserva{
+background:#141414;
+padding:20px;
+border-radius:15px;
+display:grid;
+gap:15px;
+}
+
+.campo{
+display:flex;
+flex-direction:column;
+}
+
+.campo label{
+margin-bottom:5px;
+color:#18d26e;
+}
+
+.campo input,
+.campo select{
+padding:10px;
+border:none;
+border-radius:8px;
+outline:none;
+}
+
+/* BOTÓN GENERAL YA EXISTE */
