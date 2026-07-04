@@ -1,3 +1,4 @@
+import { guardarTicket } from "./firebase.js";
 console.log("Mira y Aprende iniciado");
 
 /* =========================
