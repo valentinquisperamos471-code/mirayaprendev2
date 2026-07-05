@@ -1,71 +1,172 @@
-import { guardarTicket } from "./firebase.js";
-console.log("Mira y Aprende iniciado");
+console.log("🎬 Mira y Aprende iniciado");
 
-/* =========================
-VARIABLES
-========================= */
+//==============================
+// VARIABLES
+//==============================
 
 let asientoElegido = "";
 let total = 0;
 
-/* =========================
-ASIENTOS
-========================= */
+//==============================
+// LOADER
+//==============================
 
-const asientos = document.querySelectorAll(".asiento");
+window.addEventListener("load", () => {
 
-asientos.forEach(asiento => {
+const loader = document.getElementById("loader");
 
-asiento.addEventListener("click", () => {
+setTimeout(() => {
 
-    if(asiento.classList.contains("ocupado")) return;
+loader.style.opacity = "0";
 
-    document.querySelectorAll(".asiento")
-    .forEach(a => a.classList.remove("seleccionado"));
+loader.style.pointerEvents = "none";
 
-    asiento.classList.add("seleccionado");
+setTimeout(() => {
 
-    asientoElegido = asiento.textContent;
+loader.style.display = "none";
 
-    document.getElementById("asientoSeleccionado").textContent =
-    "💺 Asiento seleccionado: " + asientoElegido;
+},500);
 
-});
+},1800);
 
 });
 
-/* =========================
-CONFIRMAR ASIENTO
-========================= */
+//==============================
+// MENÚ CELULAR
+//==============================
 
-const btnConfirmar = document.getElementById("confirmarAsiento");
+const menuBtn = document.getElementById("menuMovil");
+const menu = document.getElementById("menu");
 
-if(btnConfirmar){
+if(menuBtn){
 
-btnConfirmar.addEventListener("click", () => {
+menuBtn.addEventListener("click",()=>{
 
-    if(asientoElegido === ""){
-        alert("Selecciona un asiento.");
-        return;
-    }
-
-    alert("🎟 Asiento confirmado: " + asientoElegido);
+menu.classList.toggle("mostrarMenu");
 
 });
 
 }
 
-/* =========================
-COMBOS
-========================= */
+//==============================
+// CONTADOR
+//==============================
 
-function agregarCombo(nombre, precio){
+function actualizarContador(){
 
-const lista = document.getElementById("listaCarrito");
+const ahora = new Date();
 
-const item = document.createElement("li");
+const funcion = new Date();
 
-item.textContent = nombre + " - S/ " + precio;
+funcion.setHours(16);
+funcion.setMinutes(30);
+funcion.setSeconds(0);
+
+let diferencia = funcion - ahora;
+
+if(diferencia < 0){
+
+diferencia += 24*60*60*1000;
+
+}
+
+const horas = Math.floor(diferencia/1000/60/60);
+
+const minutos = Math.floor((diferencia/1000/60)%60);
+
+const segundos = Math.floor((diferencia/1000)%60);
+
+const contador = document.getElementById("contadorTiempo");
+
+if(contador){
+
+contador.textContent=
+
+String(horas).padStart(2,"0")+" : "+
+
+String(minutos).padStart(2,"0")+" : "+
+
+String(segundos).padStart(2,"0");
+
+}
+
+}
+
+setInterval(actualizarContador,1000);
+
+actualizarContador();
+//==============================
+// ASIENTOS
+//==============================
+
+const asientos = document.querySelectorAll(".asiento");
+
+asientos.forEach(asiento=>{
+
+asiento.addEventListener("click",()=>{
+
+document.querySelectorAll(".asiento").forEach(a=>{
+
+a.classList.remove("seleccionado");
+
+});
+
+asiento.classList.add("seleccionado");
+
+asientoElegido = asiento.textContent;
+
+const texto = document.getElementById("asientoSeleccionado");
+
+if(texto){
+
+texto.textContent =
+"💺 Asiento seleccionado: " + asientoElegido;
+
+}
+
+});
+
+});
+
+//==============================
+// CONFIRMAR ASIENTO
+//==============================
+
+const confirmar =
+document.getElementById("confirmarAsiento");
+
+if(confirmar){
+
+confirmar.addEventListener("click",()=>{
+
+if(asientoElegido===""){
+
+alert("Selecciona un asiento.");
+
+return;
+
+}
+
+alert("✅ Has reservado el asiento " + asientoElegido);
+
+});
+
+}
+
+//==============================
+// COMBOS
+//==============================
+
+function agregarCombo(nombre,precio){
+
+const lista =
+document.getElementById("listaCarrito");
+
+const item =
+document.createElement("li");
+
+item.textContent =
+nombre + " - S/ " + precio;
 
 lista.appendChild(item);
 
@@ -78,88 +179,256 @@ document.getElementById("total").textContent =
 
 window.agregarCombo = agregarCombo;
 
-/* =========================
-TICKET
-========================= */
+//==============================
+// BOTONES RESERVAR
+//==============================
 
-const btnTicket = document.getElementById("generarTicket");
+const botones =
+document.querySelectorAll(".btnReservar");
+
+botones.forEach(boton=>{
+
+boton.addEventListener("click",()=>{
+
+document
+.getElementById("reserva")
+.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+});
+
+});
+//==============================
+// GENERAR TICKET
+//==============================
+
+const btnTicket =
+document.getElementById("generarTicket");
 
 if(btnTicket){
 
-btnTicket.addEventListener("click", () => {
+btnTicket.addEventListener("click",()=>{
 
-    const nombre = document.getElementById("nombre").value;
-    const grado = document.getElementById("grado").value;
-    const pelicula = document.getElementById("pelicula").value;
-    const hora = document.getElementById("hora").value;
+const nombre =
+document.getElementById("nombre").value.trim();
 
-    if(nombre === ""){
-        alert("Ingresa tu nombre.");
-        return;
-    }
+const grado =
+document.getElementById("grado").value;
 
-    if(grado === ""){
-        alert("Selecciona tu grado.");
-        return;
-    }
+const pelicula =
+document.getElementById("pelicula").value;
 
-    if(asientoElegido === ""){
-        alert("Selecciona un asiento.");
-        return;
-    }
+if(nombre===""){
 
-    const numeroTicket = Math.floor(Math.random() * 9000) + 1000;
+alert("Ingresa tu nombre.");
 
-    const fecha = new Date().toLocaleDateString("es-PE");
+return;
 
-    document.getElementById("ticketFinal").innerHTML = `
+}
 
-    <div class="ticket-header">
-        <h3>🎬 MIRA Y APRENDE</h3>
-        <p>Cine Reciclable Escolar</p>
-    </div>
+if(grado===""){
 
-    <div class="ticket-info">🎟 Ticket N° ${numeroTicket}</div>
-    <div class="ticket-info">👤 ${nombre}</div>
-    <div class="ticket-info">🎓 ${grado}</div>
-    <div class="ticket-info">🎬 ${pelicula}</div>
-    <div class="ticket-info">🕒 ${hora}</div>
-    <div class="ticket-info">💺 Asiento ${asientoElegido}</div>
-    <div class="ticket-info">🥤 Total: S/ ${total}</div>
-    <div class="ticket-info">📅 ${fecha}</div>
+alert("Selecciona tu grado.");
 
-    <div class="ticket-footer">
-        ♻️ Mira y Aprende - Cine Reciclable<br>
-        📱 WhatsApp: 955 057 190<br>
-        ¡Gracias por reciclar!
-    </div>
+return;
 
-    `;
+}
+
+if(pelicula===""){
+
+alert("Selecciona una película.");
+
+return;
+
+}
+
+if(asientoElegido===""){
+
+alert("Selecciona un asiento.");
+
+return;
+
+}
+
+const numero =
+Math.floor(Math.random()*9000)+1000;
+
+const fecha =
+new Date().toLocaleDateString("es-PE");
+
+const hora =
+new Date().toLocaleTimeString("es-PE");
+
+document.getElementById("ticketFinal").innerHTML=`
+
+<div class="ticket-header">
+
+<h2>🎬 MIRA Y APRENDE</h2>
+
+<p>Cine Reciclable Escolar</p>
+
+</div>
+
+<hr>
+
+<p><strong>🎟 Ticket:</strong> ${numero}</p>
+
+<p><strong>👤 Nombre:</strong> ${nombre}</p>
+
+<p><strong>🎓 Grado:</strong> ${grado}</p>
+
+<p><strong>🎬 Película:</strong> ${pelicula}</p>
+
+<p><strong>💺 Asiento:</strong> ${asientoElegido}</p>
+
+<p><strong>🍿 Combos:</strong> S/ ${total}</p>
+
+<p><strong>♻ Entrada:</strong> 8 Botellas</p>
+
+<p><strong>📅 Fecha:</strong> ${fecha}</p>
+
+<p><strong>🕒 Hora:</strong> ${hora}</p>
+
+<hr>
+
+<h3>
+
+⭐ ¡Disfruta la función!
+
+</h3>
+
+`;
+
+actualizarEstadisticas();
 
 });
 
 }
-/* =========================
-LOADER
-========================= */
 
-window.addEventListener("load", () => {
+//==============================
+// ESTADÍSTICAS
+//==============================
 
-    const loader = document.getElementById("loader");
+let reservas = 0;
+let botellas = 0;
 
-    if(loader){
+function actualizarEstadisticas(){
 
-        setTimeout(() => {
+reservas++;
 
-            loader.style.opacity = "0";
-            loader.style.transition = "opacity 0.5s";
+botellas += 8;
 
-            setTimeout(() => {
-                loader.style.display = "none";
-            }, 500);
+const r =
+document.getElementById("asientosReservados");
 
-        }, 1500);
+const b =
+document.getElementById("botellasTotal");
 
-    }
+if(r){
+
+r.textContent = reservas;
+
+}
+
+if(b){
+
+b.textContent = botellas;
+
+}
+
+}
+
+//==============================
+// USUARIOS CONECTADOS
+//==============================
+
+const usuarios =
+document.getElementById("usuariosConectados");
+
+if(usuarios){
+
+usuarios.textContent =
+Math.floor(Math.random()*25)+15;
+
+}
+//==============================
+// ANIMACIONES AL HACER SCROLL
+//==============================
+
+const secciones = document.querySelectorAll("section");
+
+const observador = new IntersectionObserver((entradas)=>{
+
+entradas.forEach(entrada=>{
+
+if(entrada.isIntersecting){
+
+entrada.target.style.opacity="1";
+entrada.target.style.transform="translateY(0px)";
+
+}
 
 });
+
+},{
+threshold:0.15
+});
+
+secciones.forEach(sec=>{
+
+sec.style.opacity="0";
+sec.style.transform="translateY(40px)";
+sec.style.transition=".8s";
+
+observador.observe(sec);
+
+});
+
+//==============================
+// BOTONES TRÁILER
+//==============================
+
+const trailers =
+document.querySelectorAll(".btnTrailer");
+
+trailers.forEach(btn=>{
+
+btn.addEventListener("click",(e)=>{
+
+e.preventDefault();
+
+alert("🎬 Próximamente podrás ver el tráiler de esta película.");
+
+});
+
+});
+
+//==============================
+// MENÚ RESPONSIVE
+//==============================
+
+const enlaces =
+document.querySelectorAll("nav a");
+
+enlaces.forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+if(window.innerWidth<=900){
+
+menu.classList.remove("mostrarMenu");
+
+}
+
+});
+
+});
+
+//==============================
+// MENSAJE FINAL
+//==============================
+
+console.log("✅ Mira y Aprende cargado correctamente.");
