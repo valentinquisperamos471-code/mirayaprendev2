@@ -1,25 +1,26 @@
-/*=====================================
+/*==========================
 MIRA Y APRENDE
-Cine Reciclable Escolar
-======================================*/
+==========================*/
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 scroll-behavior:smooth;
-font-family:'Poppins',sans-serif;
 }
 
 body{
 
-background:#0b0b0b;
+font-family:'Poppins',sans-serif;
+background:#0d0d0d;
 color:white;
 overflow-x:hidden;
 
 }
 
-/* Barra de desplazamiento */
+/*==========================
+SCROLL
+==========================*/
 
 ::-webkit-scrollbar{
 width:10px;
@@ -30,17 +31,13 @@ background:#111;
 }
 
 ::-webkit-scrollbar-thumb{
-background:#18d26e;
+background:#00c853;
 border-radius:20px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-background:#0fb95d;
 }
 
 /*==========================
 LOADER
-===========================*/
+==========================*/
 
 #loader{
 
@@ -48,38 +45,41 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-height:100%;
+height:100vh;
 background:#000;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
 z-index:99999;
 
 }
 
-#loader h1{
+.loader-content{
 
-font-size:60px;
-color:#18d26e;
-letter-spacing:5px;
-text-shadow:0 0 20px #18d26e;
+text-align:center;
 
 }
 
-#loader p{
+.loader-content h1{
 
-margin-top:15px;
-color:#ccc;
+font-size:55px;
+margin-bottom:15px;
+color:#00ff6e;
+
+}
+
+.loader-content p{
+
+color:#ddd;
+margin-bottom:30px;
 
 }
 
 .loader-bar{
 
-margin-top:25px;
 width:320px;
 height:8px;
-background:#222;
+background:#333;
 border-radius:20px;
 overflow:hidden;
 
@@ -89,12 +89,12 @@ overflow:hidden;
 
 height:100%;
 width:0%;
-background:#18d26e;
-animation:cargar 3s linear forwards;
+background:#00ff6e;
+animation:carga 2s linear forwards;
 
 }
 
-@keyframes cargar{
+@keyframes carga{
 
 0%{width:0%;}
 
@@ -104,20 +104,20 @@ animation:cargar 3s linear forwards;
 
 /*==========================
 HEADER
-===========================*/
+==========================*/
 
-header{
+.header{
 
 position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,.65);
-backdrop-filter:blur(12px);
+padding:20px 7%;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(10px);
 z-index:999;
 
 }
@@ -125,8 +125,8 @@ z-index:999;
 .logo{
 
 font-size:30px;
-font-weight:700;
-color:#18d26e;
+font-weight:bold;
+color:#00ff6e;
 
 }
 
@@ -136,15 +136,14 @@ color:white;
 
 }
 
-nav ul{
+.header nav{
 
 display:flex;
-gap:30px;
-list-style:none;
+gap:25px;
 
 }
 
-nav ul li a{
+.header nav a{
 
 text-decoration:none;
 color:white;
@@ -153,9 +152,9 @@ transition:.3s;
 
 }
 
-nav ul li a:hover{
+.header nav a:hover{
 
-color:#18d26e;
+color:#00ff6e;
 
 }
 
@@ -169,20 +168,16 @@ color:white;
 cursor:pointer;
 
 }
-
 /*==========================
-INICIO
-===========================*/
+HERO
+==========================*/
 
-#inicio{
+.hero{
 
-height:100vh;
+min-height:100vh;
 
-background:url("img/fondo.jpg");
-
-background-size:cover;
-
-background-position:center;
+background:
+radial-gradient(circle at top,#1b1b1b 0%,#111 35%,#090909 70%,#000 100%);
 
 display:flex;
 
@@ -190,67 +185,107 @@ justify-content:center;
 
 align-items:center;
 
+padding:140px 8% 80px;
+
 position:relative;
+
+overflow:hidden;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:700px;
+
+height:700px;
+
+background:#00c853;
+
+filter:blur(220px);
+
+opacity:.12;
+
+top:-250px;
+
+right:-250px;
+
+border-radius:50%;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+background:#00e676;
+
+filter:blur(180px);
+
+opacity:.08;
+
+bottom:-180px;
+
+left:-180px;
+
+border-radius:50%;
 
 }
 
 .overlay{
 
-position:absolute;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-background:rgba(0,0,0,.65);
+display:none;
 
 }
 
-.hero{
+.heroContenido{
 
 position:relative;
 
-text-align:center;
+z-index:5;
 
-z-index:2;
+max-width:750px;
 
-max-width:900px;
-
-padding:20px;
+text-align:left;
 
 }
 
-.hero h1{
+.heroContenido h1{
 
-font-size:70px;
+font-size:68px;
 
-color:#18d26e;
+font-weight:800;
 
-text-shadow:0 0 30px #18d26e;
+line-height:1.1;
 
-margin-bottom:20px;
+margin-bottom:25px;
 
-}
-
-.hero h2{
-
-font-size:34px;
-
-margin-bottom:20px;
+color:white;
 
 }
 
-.hero p{
+.heroContenido h1 span{
 
-font-size:20px;
+color:#00ff84;
 
-line-height:35px;
+}
 
-color:#ddd;
+.heroContenido p{
+
+font-size:21px;
+
+color:#cfcfcf;
+
+line-height:1.8;
 
 margin-bottom:35px;
 
@@ -260,259 +295,10 @@ margin-bottom:35px;
 
 display:flex;
 
-justify-content:center;
-
-gap:20px;
+gap:18px;
 
 flex-wrap:wrap;
 
-}
-
-.btnPrincipal{
-
-background:#18d26e;
-
-padding:16px 40px;
-
-border-radius:50px;
-
-text-decoration:none;
-
-color:white;
-
-font-weight:700;
-
-transition:.3s;
-
-display:inline-block;
+margin-top:20px;
 
 }
-
-.btnPrincipal:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 15px 30px rgba(24,210,110,.4);
-
-}
-
-.btnSecundario{
-
-background:transparent;
-
-border:2px solid #18d26e;
-
-padding:16px 40px;
-
-border-radius:50px;
-
-text-decoration:none;
-
-color:#18d26e;
-
-font-weight:700;
-
-transition:.3s;
-
-display:inline-block;
-
-}
-
-.btnSecundario:hover{
-
-background:#18d26e;
-
-color:white;
-
-}
-
-.contador{
-
-margin-top:60px;
-
-padding:20px;
-
-background:rgba(255,255,255,.08);
-
-border-radius:20px;
-
-backdrop-filter:blur(10px);
-
-display:inline-block;
-
-}
-
-#contadorTiempo{
-
-font-size:35px;
-
-font-weight:bold;
-
-margin-top:10px;
-
-color:#18d26e;
-
-}
-
-/*==========================
-TÍTULOS
-===========================*/
-
-.tituloSeccion{
-
-font-size:45px;
-
-text-align:center;
-
-margin:80px 0 50px;
-
-color:#18d26e;
-
-text-shadow:0 0 20px rgba(24,210,110,.5);
-
-}
-#cartelera{
-padding:80px 8%;
-}
-
-.peliculas{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
-
-.pelicula{
-background:#141414;
-border-radius:15px;
-overflow:hidden;
-transition:.3s;
-box-shadow:0 10px 30px rgba(0,0,0,.5);
-cursor:pointer;
-}
-
-.pelicula:hover{
-transform:scale(1.05);
-box-shadow:0 15px 40px rgba(24,210,110,.4);
-}
-
-.pelicula img{
-width:100%;
-height:320px;
-object-fit:cover;
-}
-
-.infoPelicula{
-padding:15px;
-}
-
-.infoPelicula h3{
-color:#18d26e;
-margin-bottom:5px;
-}
-
-.infoPelicula p{
-color:#ccc;
-font-size:14px;
-margin:5px 0;
-}
-
-/* BOTONES */
-
-.botonesPelicula{
-display:flex;
-justify-content:space-between;
-margin-top:10px;
-gap:10px;
-}
-
-.btnTrailer{
-flex:1;
-text-align:center;
-background:#333;
-color:white;
-padding:8px;
-border-radius:8px;
-text-decoration:none;
-transition:.3s;
-}
-
-.btnTrailer:hover{
-background:#18d26e;
-}
-
-.btnReservar{
-flex:1;
-text-align:center;
-background:#18d26e;
-color:white;
-padding:8px;
-border-radius:8px;
-text-decoration:none;
-transition:.3s;
-}
-
-.btnReservar:hover{
-background:#0fb95d;
-}
-
-/* HORARIOS */
-
-#horarios{
-padding:80px 8%;
-}
-
-.contenedorHorarios{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.horarioCard{
-background:#141414;
-padding:20px;
-border-radius:15px;
-text-align:center;
-}
-
-.horarioCard h3{
-color:#18d26e;
-margin-bottom:10px;
-}
-
-.horarioCard.cerrado{
-border:2px solid red;
-}
-
-/* RESERVA */
-
-#reserva{
-padding:80px 8%;
-}
-
-.formReserva{
-background:#141414;
-padding:20px;
-border-radius:15px;
-display:grid;
-gap:15px;
-}
-
-.campo{
-display:flex;
-flex-direction:column;
-}
-
-.campo label{
-margin-bottom:5px;
-color:#18d26e;
-}
-
-.campo input,
-.campo select{
-padding:10px;
-border:none;
-border-radius:8px;
-outline:none;
-}
-
-/* BOTÓN GENERAL YA EXISTE */
