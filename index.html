@@ -9,44 +9,49 @@
 <title>Mira y Aprende | Cine Reciclable</title>
 
 <meta name="description"
-content="Mira y Aprende, el cine reciclable de San Juan de Lurigancho.">
-
-<link rel="stylesheet" href="style.css">
+content="Mira y Aprende - El primer cine reciclable escolar.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<!--==========================
+<!-- =========================
 PANTALLA DE CARGA
-===========================-->
+========================= -->
 
 <div id="loader">
 
-<h1>MIRA Y APRENDE</h1>
+<div class="loader-content">
 
-<p>Preparando la experiencia...</p>
+<h1>🎬 MIRA Y APRENDE</h1>
+
+<p>Preparando la experiencia cinematográfica...</p>
 
 <div class="loader-bar">
+
 <div class="loader-fill"></div>
+
+</div>
+
 </div>
 
 </div>
 
-<!--==========================
+<!-- =========================
 HEADER
-===========================-->
+========================= -->
 
-<header>
+<header class="header">
 
 <div class="logo">
 
@@ -54,25 +59,21 @@ HEADER
 
 </div>
 
-<nav>
+<nav id="menu">
 
-<ul>
+<a href="#inicio">Inicio</a>
 
-<li><a href="#inicio">Inicio</a></li>
+<a href="#cartelera">Cartelera</a>
 
-<li><a href="#cartelera">Cartelera</a></li>
+<a href="#horarios">Horarios</a>
 
-<li><a href="#horarios">Horarios</a></li>
+<a href="#reserva">Reserva</a>
 
-<li><a href="#reserva">Reserva</a></li>
+<a href="#combos">Combos</a>
 
-<li><a href="#combos">Combos</a></li>
+<a href="#ranking">Ranking</a>
 
-<li><a href="#ranking">Ranking</a></li>
-
-<li><a href="#contacto">Contacto</a></li>
-
-</ul>
+<a href="#contacto">Contacto</a>
 
 </nav>
 
@@ -84,33 +85,29 @@ HEADER
 
 </header>
 
-<!--==========================
+<!-- =========================
 INICIO
-===========================-->
+========================= -->
 
-<section id="inicio">
+<section id="inicio" class="hero">
 
 <div class="overlay"></div>
 
-<div class="hero">
+<div class="heroContenido">
 
 <h1>
 
-♻️ MIRA Y APRENDE
+♻️ FESTIVAL DE CINE<br>
+
+RECICLABLE 2026
 
 </h1>
-
-<h2>
-
-El primer cine reciclable de San Juan de Lurigancho
-
-</h2>
 
 <p>
 
 Trae <strong>8 botellas reciclables</strong>
 
-y disfruta de una increíble experiencia de cine.
+y disfruta una experiencia de cine totalmente GRATIS.
 
 </p>
 
@@ -118,7 +115,7 @@ y disfruta de una increíble experiencia de cine.
 
 <a href="#cartelera" class="btnPrincipal">
 
-🎬 Ver Cartelera
+🍿 Ver Cartelera
 
 </a>
 
@@ -132,7 +129,11 @@ y disfruta de una increíble experiencia de cine.
 
 <div class="contador">
 
-<h3>Próxima Función</h3>
+<h3>
+
+⏳ Próxima Función
+
+</h3>
 
 <div id="contadorTiempo">
 
@@ -146,218 +147,345 @@ y disfruta de una increíble experiencia de cine.
 
 </section>
 
-<!--==========================
-CARTELERA
-===========================-->
+<!-- =========================
+ESTADÍSTICAS
+========================= -->
 
-<section id="cartelera">
+<section class="estadisticas">
 
-<h2 class="tituloSeccion">🎬 Cartelera</h2>
+<div class="cardEstadistica">
 
-<div class="peliculas">
+<h2 id="botellasTotal">
 
-    <!-- Toy Story 5 -->
-    <div class="pelicula">
-        <img src="img/toystory5.jpg" alt="Toy Story 5">
+0
 
-        <div class="infoPelicula">
-            <h3>Toy Story 5</h3>
+</h2>
 
-            <p>⭐ Aventura • Animación</p>
+<p>
 
-            <p>⏱ 1h 45min</p>
+♻️ Botellas recicladas
 
-            <div class="botonesPelicula">
-                <a href="https://www.youtube.com/watch?v=c51ND9Hdbw0" target="_blank" class="btnTrailer">
-                    ▶ Ver Tráiler
-                </a>
+</p>
 
-                <a href="#reserva" class="btnReservar">
-                    🎟 Reservar
-                </a>
-            </div>
-        </div>
-    </div>
+</div>
 
-    <!-- Minions -->
-    <div class="pelicula">
+<div class="cardEstadistica">
 
-        <img src="img/minions.jpg" alt="Minions & Monsters">
+<h2 id="asientosReservados">
 
-        <div class="infoPelicula">
+0
 
-            <h3>Minions & Monsters</h3>
+</h2>
 
-            <p>⭐ Comedia • Familiar</p>
+<p>
 
-            <p>⏱ 1h 40min</p>
+💺 Asientos reservados
 
-            <div class="botonesPelicula">
+</p>
 
-                <a href="https://www.youtube.com/watch?v=VHQJ3rZKpak" target="_blank" class="btnTrailer">
+</div>
 
-                    ▶ Ver Tráiler
+<div class="cardEstadistica">
 
-                </a>
+<h2 id="usuariosConectados">
 
-                <a href="#reserva" class="btnReservar">
+0
 
-                    🎟 Reservar
+</h2>
 
-                </a>
+<p>
 
-            </div>
+👥 Usuarios conectados
 
-        </div>
+</p>
 
-    </div>
+</div>
 
-    <!-- Digital Circus -->
+<div class="cardEstadistica">
 
-    <div class="pelicula">
+<h2>
 
-        <img src="img/digitalcircus.jpg" alt="The Amazing Digital Circus">
+🏆
 
-        <div class="infoPelicula">
+</h2>
 
-            <h3>The Amazing Digital Circus</h3>
+<p>
 
-            <p>⭐ Animación • Fantasía</p>
+Curso líder
 
-            <p>⏱ 1h 35min</p>
-
-            <div class="botonesPelicula">
-
-                <a href="https://youtu.be/RAJI_yagwoI" target="_blank" class="btnTrailer">
-
-                    ▶ Ver Tráiler
-
-                </a>
-
-                <a href="#reserva" class="btnReservar">
-
-                    🎟 Reservar
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Obsesión -->
-
-    <div class="pelicula">
-
-        <img src="img/obsesion.jpg" alt="Obsesión">
-
-        <div class="infoPelicula">
-
-            <h3>Obsesión</h3>
-
-            <p>⭐ Terror</p>
-
-            <p>⏱ 1h 52min</p>
-
-            <div class="botonesPelicula">
-
-                <a href="https://youtu.be/nkbdrYs7Maw" target="_blank" class="btnTrailer">
-
-                    ▶ Ver Tráiler
-
-                </a>
-
-                <a href="#reserva" class="btnReservar">
-
-                    🎟 Reservar
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- La Odisea -->
-
-    <div class="pelicula">
-
-        <img src="img/odisea.jpg" alt="La Odisea">
-
-        <div class="infoPelicula">
-
-            <h3>La Odisea</h3>
-
-            <p>⭐ Acción • Aventura</p>
-
-            <p>⏱ 2h 30min</p>
-
-            <div class="botonesPelicula">
-
-                <a href="https://youtu.be/ub41K58GvFg" target="_blank" class="btnTrailer">
-
-                    ▶ Ver Tráiler
-
-                </a>
-
-                <a href="#reserva" class="btnReservar">
-
-                    🎟 Reservar
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
+</p>
 
 </div>
 
 </section>
-===========================--><!--==========================
+
+<!-- =========================
+CARTELERA
+========================= -->
+
+<section id="cartelera">
+
+<h2 class="tituloSeccion">
+
+🎬 Cartelera
+
+</h2>
+
+<div class="peliculas"> 
+    
+    <!-- ====== MINIONS ====== -->
+
+<div class="pelicula">
+
+<img src="img/minions.jpg">
+
+<div class="infoPelicula">
+
+<span class="genero">
+😂 Animación
+</span>
+
+<h3>Minions y Monstruos</h3>
+
+<p>
+Los Minions se enfrentan a un mundo lleno de monstruos y aventuras.
+</p>
+
+<div class="datos">
+
+<span>⭐ 9.3</span>
+
+<span>⏱ 95 min</span>
+
+<span>ATP</span>
+
+</div>
+
+<div class="botones">
+
+<a href="#" class="btnTrailer">
+▶ Tráiler
+</a>
+
+<a href="#reserva" class="btnReservar">
+🎟 Reservar
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ====== SUPERGIRL ====== -->
+
+<div class="pelicula">
+
+<img src="img/supergirl.jpg">
+
+<div class="infoPelicula">
+
+<span class="genero">
+🦸 Acción
+</span>
+
+<h3>Supergirl</h3>
+
+<p>
+La heroína más poderosa de DC llega con una nueva aventura.
+</p>
+
+<div class="datos">
+
+<span>⭐ 9.5</span>
+
+<span>⏱ 130 min</span>
+
+<span>+13</span>
+
+</div>
+
+<div class="botones">
+
+<a href="#" class="btnTrailer">
+▶ Tráiler
+</a>
+
+<a href="#reserva" class="btnReservar">
+🎟 Reservar
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ====== TOY STORY ====== -->
+
+<div class="pelicula">
+
+<img src="img/toystory5.jpg">
+
+<div class="infoPelicula">
+
+<span class="genero">
+🧸 Familiar
+</span>
+
+<h3>Toy Story 5</h3>
+
+<p>
+Woody y Buzz regresan para una aventura inolvidable.
+</p>
+
+<div class="datos">
+
+<span>⭐ 9.8</span>
+
+<span>⏱ 110 min</span>
+
+<span>ATP</span>
+
+</div>
+
+<div class="botones">
+
+<a href="#" class="btnTrailer">
+▶ Tráiler
+</a>
+
+<a href="#reserva" class="btnReservar">
+🎟 Reservar
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ====== EL DÍA DE LA REVELACIÓN ====== -->
+
+<div class="pelicula">
+
+<img src="img/revelacion.jpg">
+
+<div class="infoPelicula">
+
+<span class="genero">
+👁 Ciencia ficción
+</span>
+
+<h3>El Día de la Revelación</h3>
+
+<p>
+Un descubrimiento cambiará para siempre el destino de la humanidad.
+</p>
+
+<div class="datos">
+
+<span>⭐ 9.0</span>
+
+<span>⏱ 122 min</span>
+
+<span>+14</span>
+
+</div>
+
+<div class="botones">
+
+<a href="#" class="btnTrailer">
+▶ Tráiler
+</a>
+
+<a href="#reserva" class="btnReservar">
+🎟 Reservar
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ====== OBSESIÓN ====== -->
+
+<div class="pelicula">
+
+<img src="img/obsesion.jpg">
+
+<div class="infoPelicula">
+
+<span class="genero">
+😱 Terror
+</span>
+
+<h3>Obsesión</h3>
+
+<p>
+Un thriller lleno de misterio donde nada es lo que parece.
+</p>
+
+<div class="datos">
+
+<span>⭐ 8.9</span>
+
+<span>⏱ 118 min</span>
+
+<span>+18</span>
+
+</div>
+
+<div class="botones">
+
+<a href="#" class="btnTrailer">
+▶ Tráiler
+</a>
+
+<a href="#reserva" class="btnReservar">
+🎟 Reservar
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!--==========================
 HORARIOS
 ===========================-->
 
 <section id="horarios">
 
-<h2 class="tituloSeccion">🕒 Horarios</h2>
+<h2 class="tituloSeccion">
+🕒 Horarios de Funciones
+</h2>
 
-<div class="contenedorHorarios">
+<div class="horarios">
 
-<div class="horarioCard">
-
-<h3>📅 Lunes a Viernes</h3>
-
-<p>3:00 PM</p>
-<p>5:00 PM</p>
-<p>7:00 PM</p>
-<p>9:00 PM</p>
-
+<div class="horario">
+<h3>09:00 AM</h3>
+<p>Función Escolar</p>
 </div>
 
-<div class="horarioCard">
-
-<h3>📅 Sábados</h3>
-
-<p>10:00 AM</p>
-<p>12:00 PM</p>
-<p>2:00 PM</p>
-<p>4:00 PM</p>
-<p>6:00 PM</p>
-<p>8:00 PM</p>
-<p>10:00 PM</p>
-
+<div class="horario">
+<h3>11:30 AM</h3>
+<p>Función Familiar</p>
 </div>
 
-<div class="horarioCard cerrado">
+<div class="horario">
+<h3>02:00 PM</h3>
+<p>Función General</p>
+</div>
 
-<h3>🚫 Domingos y Feriados</h3>
-
-<p>Cerrado</p>
-
+<div class="horario">
+<h3>04:30 PM</h3>
+<p>Última Función</p>
 </div>
 
 </div>
@@ -370,37 +498,22 @@ RESERVA
 
 <section id="reserva">
 
-<h2 class="tituloSeccion">🎟 Reserva tu Entrada</h2>
+<h2 class="tituloSeccion">
+🎟 Reserva tu Entrada
+</h2>
 
 <div class="formReserva">
-
-<div class="campo">
-
-<label>👤 Nombre Completo</label>
 
 <input
 type="text"
 id="nombre"
-placeholder="Escribe tu nombre">
-
-</div>
-
-<div class="campo">
-
-<label>🎓 Grado / Público</label>
+placeholder="👤 Escribe tu nombre">
 
 <select id="grado">
 
-<option value="">Selecciona</option>
-
-<option>Inicial</option>
-
-<option>1° Primaria</option>
-<option>2° Primaria</option>
-<option>3° Primaria</option>
-<option>4° Primaria</option>
-<option>5° Primaria</option>
-<option>6° Primaria</option>
+<option value="">
+🎓 Selecciona tu grado
+</option>
 
 <option>1° Secundaria</option>
 <option>2° Secundaria</option>
@@ -408,113 +521,90 @@ placeholder="Escribe tu nombre">
 <option>4° Secundaria</option>
 <option>5° Secundaria</option>
 
-<option>Comunidad SJL</option>
-
 </select>
-
-</div>
-
-<div class="campo">
-
-<label>🎬 Película</label>
 
 <select id="pelicula">
 
+<option value="">
+🎬 Selecciona una película
+</option>
+
+<option>Minions y Monstruos</option>
+
+<option>Supergirl</option>
+
 <option>Toy Story 5</option>
 
-<option>Minions & Monsters</option>
-
-<option>The Amazing Digital Circus</option>
+<option>El Día de la Revelación</option>
 
 <option>Obsesión</option>
 
-<option>La Odisea</option>
-
 </select>
-
-</div>
-
-<div class="campo">
-
-<label>🕒 Horario</label>
-
-<select id="hora">
-
-<option>3:00 PM</option>
-<option>5:00 PM</option>
-<option>7:00 PM</option>
-<option>9:00 PM</option>
-
-</select>
-
-</div>
 
 <a href="#asientos" class="btnPrincipal">
 
-Continuar →<!--==========================
+Continuar →
+
+</a>
+
+</div>
+
+</section>
+
+<!--==========================
 ASIENTOS
 ===========================-->
 
 <section id="asientos">
 
-<h2 class="tituloSeccion">💺 Selecciona tu Asiento</h2>
+<h2 class="tituloSeccion">
+💺 Selecciona tu Asiento
+</h2>
 
 <div class="pantalla">
-🎥 PANTALLA
-</div>
 
-<div class="leyenda">
-
-<div><span class="libre"></span> Libre</div>
-
-<div><span class="seleccionadoLeyenda"></span> Seleccionado</div>
-
-<div><span class="ocupado"></span> Ocupado</div>
+PANTALLA
 
 </div>
 
-<div class="cine">
+<div class="gridAsientos">
 
-<div class="fila">
-<div class="asiento">A1</div>
-<div class="asiento">A2</div>
-<div class="asiento">A3</div>
-<div class="asiento">A4</div>
-<div class="asiento">A5</div>
-</div>
+<button class="asiento">A1</button>
+<button class="asiento">A2</button>
+<button class="asiento">A3</button>
+<button class="asiento">A4</button>
+<button class="asiento">A5</button>
 
-<div class="fila">
-<div class="asiento">B1</div>
-<div class="asiento">B2</div>
-<div class="asiento ocupado">B3</div>
-<div class="asiento">B4</div>
-<div class="asiento">B5</div>
-</div>
+<button class="asiento">B1</button>
+<button class="asiento">B2</button>
+<button class="asiento">B3</button>
+<button class="asiento">B4</button>
+<button class="asiento">B5</button>
 
-<div class="fila">
-<div class="asiento">C1</div>
-<div class="asiento">C2</div>
-<div class="asiento">C3</div>
-<div class="asiento">C4</div>
-<div class="asiento">C5</div>
-</div>
+<button class="asiento">C1</button>
+<button class="asiento">C2</button>
+<button class="asiento">C3</button>
+<button class="asiento">C4</button>
+<button class="asiento">C5</button>
 
-<div class="fila">
-<div class="asiento">D1</div>
-<div class="asiento">D2</div>
-<div class="asiento">D3</div>
-<div class="asiento ocupado">D4</div>
-<div class="asiento">D5</div>
-</div>
+<button class="asiento">D1</button>
+<button class="asiento">D2</button>
+<button class="asiento">D3</button>
+<button class="asiento">D4</button>
+<button class="asiento">D5</button>
 
 </div>
 
-<h3 id="asientoSeleccionado">
+<p id="asientoSeleccionado">
+
 💺 Ningún asiento seleccionado
-</h3>
+
+</p>
 
 <button id="confirmarAsiento" class="btnPrincipal">
+
 Confirmar Asiento
+
 </button>
 
 </section>
@@ -524,98 +614,86 @@ COMBOS
 
 <section id="combos">
 
-<h2 class="tituloSeccion">🍿 Combos</h2>
+<h2 class="tituloSeccion">
+🍿 Combos
+</h2>
 
-<div class="contenedorCombos">
-
-<div class="combo">
-
-<img src="img/canchita.png" alt="Canchita">
-
-<h3>Combo Escolar</h3>
-
-<p>Canchita + Gaseosa</p>
-
-<h4>S/ 8</h4>
-
-<button onclick="agregarCombo('Combo Escolar',8)">
-Agregar
-</button>
-
-</div>
+<div class="combos">
 
 <div class="combo">
-
-<img src="img/hotdog.png" alt="Hot Dog">
-
-<h3>Combo Hot Dog</h3>
-
-<p>Hot Dog + Gaseosa</p>
-
-<h4>S/ 12</h4>
-
-<button onclick="agregarCombo('Combo Hot Dog',12)">
-Agregar
-</button>
-
-</div>
-
-<div class="combo">
-
-<img src="img/nachos.png" alt="Nachos">
-
-<h3>Combo Nachos</h3>
-
-<p>Nachos + Gaseosa</p>
-
+<img src="img/combo1.png" alt="Combo Clásico">
+<h3>Combo Clásico</h3>
+<p>🍿 Canchita + 🥤 Gaseosa</p>
 <h4>S/ 10</h4>
-
-<button onclick="agregarCombo('Combo Nachos',10)">
+<button onclick="agregarCombo('Combo Clásico',10)">
 Agregar
 </button>
+</div>
 
+<div class="combo">
+<img src="img/combo2.png" alt="Combo Familiar">
+<h3>Combo Familiar</h3>
+<p>2 🍿 + 2 🥤</p>
+<h4>S/ 18</h4>
+<button onclick="agregarCombo('Combo Familiar',18)">
+Agregar
+</button>
+</div>
+
+<div class="combo">
+<img src="img/combo3.png" alt="Combo Mega">
+<h3>Combo Mega</h3>
+<p>🍿 + 🥤 + 🍫</p>
+<h4>S/ 15</h4>
+<button onclick="agregarCombo('Combo Mega',15)">
+Agregar
+</button>
 </div>
 
 </div>
+
+<div class="carrito">
 
 <h3>🛒 Carrito</h3>
 
 <ul id="listaCarrito"></ul>
 
-<h3 id="total">
-Total: S/ 0
-</h3>
+<h2 id="total">
 
-</section>
-    
-</a>
+Total: S/ 0
+
+</h2>
 
 </div>
 
 </section>
 
-<script type="module" src="firebase.js"></script>
-
-
-</body>
-
-</html>
 <!--==========================
 TICKET
 ===========================-->
 
 <section id="ticket">
 
-<h2 class="tituloSeccion">🎟 Tu Ticket</h2>
+<h2 class="tituloSeccion">
+
+🎟 Tu Ticket
+
+</h2>
 
 <div id="ticketFinal">
 
-<p>Aquí aparecerá tu ticket cuando completes la reserva.</p>
+<p>
+
+Completa tu reserva para generar el ticket.
+
+</p>
 
 </div>
 
 <button id="generarTicket" class="btnPrincipal">
-🎟 Generar Ticket
+
+Generar Ticket
+
 </button>
 
 </section>
@@ -626,32 +704,30 @@ RANKING
 
 <section id="ranking">
 
-<h2 class="tituloSeccion">🏆 Ranking Ecológico</h2>
+<h2 class="tituloSeccion">
 
-<div class="rankingCards">
+🏆 Ranking Ecológico
 
-<div class="rankingCard">
-🥇
-<h3>Inicial</h3>
-<p>0 Botellas</p>
+</h2>
+
+<div class="ranking">
+
+<div class="curso">
+
+🥇 5° Secundaria
+
 </div>
 
-<div class="rankingCard">
-🥈
-<h3>Primaria</h3>
-<p>0 Botellas</p>
+<div class="curso">
+
+🥈 4° Secundaria
+
 </div>
 
-<div class="rankingCard">
-🥉
-<h3>Secundaria</h3>
-<p>0 Botellas</p>
-</div>
+<div class="curso">
 
-<div class="rankingCard">
-🌎
-<h3>Comunidad SJL</h3>
-<p>0 Botellas</p>
+🥉 3° Secundaria
+
 </div>
 
 </div>
@@ -664,27 +740,64 @@ CONTACTO
 
 <section id="contacto">
 
-<h2 class="tituloSeccion">📞 Contáctanos</h2>
+<h2 class="tituloSeccion">
 
-<p>📍 San Juan de Lurigancho - Lima, Perú</p>
+📞 Contacto
 
-<p>📱 WhatsApp: 955 057 190</p>
+</h2>
 
-<p>📧 Email: mirayaprende@gmail.com</p>
-
-</section>
-
-<footer>
+<div class="contacto">
 
 <p>
 
-© 2026 Mira y Aprende | Cine Reciclable Escolar
+📍 lima - Perú - slj
+
+</p>
+
+<p>
+
+📱 WhatsApp: 955 057 190
+
+</p>
+
+<p>
+
+✉️ Email: valentinquisperamos471@gmail.com
+
+</p>
+
+</div>
+
+</section>
+
+<!--==========================
+FOOTER
+===========================-->
+
+<footer>
+
+<h3>
+
+🎬 Mira y Aprende
+
+</h3>
+
+<p>
+
+El primer cine reciclable escolar.
+
+</p>
+
+<p>
+
+© 2026 Todos los derechos reservados.
 
 </p>
 
 </footer>
 
 <script type="module" src="firebase.js"></script>
+
 <script src="app.js"></script>
 
 </body>
